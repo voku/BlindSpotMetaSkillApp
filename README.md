@@ -1,6 +1,6 @@
-# BlindSpot Meta Skill App
+# Der Griller
 
-BlindSpot Meta Skill App is a static React + Vite UI for creating reusable blind-spot review prompts, previewing the generated skill package, and exporting the resulting prompt files.
+Der Griller is a static React + Vite UI for creating reusable blind-spot review prompts, previewing the generated skill package, and exporting the resulting prompt files.
 
 ## Features
 
@@ -89,7 +89,7 @@ If GitHub Pages is not already configured for this repository, set the Pages sou
 Use this helper prompt when you want another agent or model to quickly identify the most relevant files before making changes:
 
 ```text
-You are reviewing the BlindSpot Meta Skill App repository.
+You are reviewing the Der Griller repository.
 
 Goal:
 - Identify the smallest set of files that must be inspected to complete a requested change safely.

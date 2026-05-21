@@ -125,7 +125,7 @@ export default function PackageBrowser({ files, skillName }: PackageBrowserProps
         <div className="bg-slate-50 px-4 py-2.5 border-b border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <span className="text-[10px] font-mono font-bold text-slate-400 tracking-wider hidden sm:inline">ACTIVE:</span>
-            <span className="text-xs font-mono font-bold text-orange-700 break-all">{activeSelectedFile?.path || 'Meta Prompt'}</span>
+            <span className="text-xs font-mono font-bold text-orange-700 break-all">{activeSelectedFile?.path || 'Der Griller'}</span>
           </div>
 
           <div className="flex gap-2 w-full sm:w-auto justify-end">
