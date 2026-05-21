@@ -87,7 +87,7 @@ export default function App() {
             {copiedLink ? (
               <>
                 <Check className="w-3.5 h-3.5 text-emerald-650" />
-                Copied Local URL!
+                Copied App URL!
               </>
             ) : (
               <>
@@ -98,12 +98,12 @@ export default function App() {
           </button>
           
           <a
-            href="https://ai.studio/build"
+            href="https://github.com/voku/BlindSpotMetaSkillApp"
             target="_blank"
             rel="noopener noreferrer"
             className="px-3 py-1.5 bg-orange-50 border border-orange-205 text-orange-700 hover:bg-orange-500 hover:text-white rounded-lg text-xs font-semibold transition flex items-center gap-1.5 leading-none focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 shadow-2xs"
           >
-            AI Studio Build
+            View Source
             <ExternalLink className="w-3 h-3" />
           </a>
         </div>
@@ -230,12 +230,12 @@ export default function App() {
         <div className="flex items-center gap-2">
           <span>Meta Prompt Skill Architect</span>
           <span className="text-slate-300">•</span>
-          <span>Google AI Studio runtime connection</span>
+          <span>Static Vite build</span>
         </div>
         
         <div className="flex items-center gap-4">
           <span className="text-slate-300 select-none">|</span>
-          <span className="font-mono text-[10px] text-slate-400">Local Time: 2026-05-21 UTC</span>
+          <span className="font-mono text-[10px] text-slate-400">GitHub Pages ready</span>
         </div>
       </footer>
 
