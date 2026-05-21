@@ -1,0 +1,6 @@
+{
+  "name": "Der Griller",
+  "description": "The ultimate Roast Skill Generator. An interactive sandbox for developers, designers, and software architects to configure and live-test customized roasting blueprints for audits and code reviews.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
