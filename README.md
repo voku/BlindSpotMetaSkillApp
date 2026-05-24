@@ -8,7 +8,7 @@ Der Griller is a static React + Vite UI for creating reusable blind-spot review 
 - Live generated prompt preview
 - Package browser for exported skill files
 - Static build output ready for GitHub Pages
-- Social preview metadata and favicon included
+- Social preview metadata for LinkedIn/X and bundled preview images included
 
 ## Tech Stack
 
@@ -71,6 +71,7 @@ If GitHub Pages is not already configured for this repository, set the Pages sou
 ├── index.html
 ├── public/
 │   ├── favicon.svg
+│   ├── social-preview.png
 │   └── social-preview.svg
 ├── src/
 │   ├── App.tsx
