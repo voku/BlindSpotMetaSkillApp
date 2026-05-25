@@ -254,7 +254,7 @@ export default function SkillForm({ skill, onChange, onResetPreset }: SkillFormP
               </p>
               <textarea
                 className="w-full bg-white border border-slate-250 hover:border-orange-350 rounded-lg px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 h-24 focus:outline-none focus:border-orange-500 focus:bg-white focus:ring-1 focus:ring-orange-500/20 transition resize-none shadow-2xs font-sans leading-relaxed"
-                placeholder="e.g. My Rust concurrent task loops, async channel buffers, and memory footprint bounds under high thread contention..."
+                placeholder="e.g. This repo's Vite + TypeScript validation flow, default template wording, GitHub Pages metadata, and build/deploy path..."
                 value={skill.gq1_focusArea || ''}
                 onChange={(e) => onChange({ gq1_focusArea: e.target.value })}
               />
@@ -269,7 +269,7 @@ export default function SkillForm({ skill, onChange, onResetPreset }: SkillFormP
               </p>
               <textarea
                 className="w-full bg-white border border-slate-250 hover:border-orange-350 rounded-lg px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 h-24 focus:outline-none focus:border-orange-500 focus:bg-white focus:ring-1 focus:ring-orange-500/20 transition resize-none shadow-2xs font-sans leading-relaxed"
-                placeholder="e.g. My fear of complex async lifecycles lead to me cowboy-editing static mutex guards and bypassing rust safety metrics..."
+                placeholder="e.g. I may mistake missing npm installs for code regressions, drift into generic advice, or change deployment-related files without enough repo evidence..."
                 value={skill.gq2_specificConcern || ''}
                 onChange={(e) => onChange({ gq2_specificConcern: e.target.value })}
               />
