@@ -3,25 +3,25 @@ import { SkillDefinition } from '../types';
 export const PRESET_TEMPLATES: SkillDefinition[] = [
   {
     id: 'blind-spot-architect-unflinching',
-    name: 'Blind Spot Architect: Unflinching Focus',
-    description: 'Generates a hyper-focused, brutally honest, multi-part blind spot analysis prompt designed for a receiving AI with long-term memory. Demands an in your face analysis for growth.',
+    name: 'Blind Spot Architect: Repo-First Recovery Loop',
+    description: 'Generates a repo-first blind spot analysis prompt for TypeScript, Vite, and GitHub Pages workflows. Forces evidence from current files, local patterns, validation order, and deployment risk before proposing changes.',
     role: 'developer',
-    domain: 'backend',
-    tone: 'relentless',
-    language: 'rust',
+    domain: 'web',
+    tone: 'no-bullshit',
+    language: 'typescript',
     skillFormat: 'markdown',
-    focusAreas: ['agent-flow-loop-logic', 'token-budget-leaks', 'agent-state-persistence'],
-    customRules: '1. Strict Infinite Loop Check: Prevent unbounded agent self-correction steps.\n2. Validation Fallbacks: Enforce structured JSON schemas.\n3. Hard Budgets: Enforce static timeout boundaries.',
+    focusAreas: ['lifecycle', 'observability', 'rollback', 'dependencies'],
+    customRules: '1. Repo-First Pattern Check: compare at least two in-repo examples before proposing a new structure.\n2. Intent Preservation: do not weaken strict contracts, metadata, or constants just to satisfy the currently visible runtime shape.\n3. High-Risk Surface Audit: treat workflows, deployment files, metadata, migrations, and already-run operational scripts as dangerous until proven otherwise.\n4. Validation Order Discipline: verify dependency/install state before interpreting lint/build failures.\n5. Durable Learning Loop: when a reviewer corrects a missed local pattern, encode the correction into the resulting workflow guidance.',
     outputMode: 'deep',
     verdictLabels: ['REJECT', 'ACCEPT WITH CONSTRAINTS', 'MINIMAL PATCH FIRST'],
     includeReferences: {
       rubric: true,
       verdictMatrix: true,
       antiDogma: true,
-      preflightScript: false
+      preflightScript: true
     },
-    gq1_focusArea: 'AI agent code loop architectures, unbounded task budgets, and recursive self-triggers',
-    gq2_specificConcern: 'My fear of complex state-persistence refactoring leading to blind cowboy edits that break the build'
+    gq1_focusArea: 'This repository\'s Vite + TypeScript workflow, generated blind-spot skill wording, and GitHub Pages validation/deployment path',
+    gq2_specificConcern: 'I may reach for generic backend/agent-loop advice, misread missing dependencies as real code failures, or improve structure without first matching the repository\'s existing pattern'
   },
   {
     id: 'unflinching-blindspot-architect',

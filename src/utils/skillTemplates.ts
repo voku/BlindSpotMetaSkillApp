@@ -8,6 +8,7 @@ export function generateSkillContent(skill: SkillDefinition): string {
   const language = skill.language || 'Agnostic';
   const folderName = (skill.name || 'blind-spot-roaster').toLowerCase().replace(/[^a-z0-9]+/g, '-');
   const availableAreas = getFocusAreas(skill.role, skill.domain);
+  const isRepoFirstBlindSpot = skill.id === 'blind-spot-architect-unflinching';
   const activeFocusAreas = skill.focusAreas
     .map(id => availableAreas.find(a => a.id === id))
     .filter(Boolean);
@@ -19,6 +20,20 @@ export function generateSkillContent(skill: SkillDefinition): string {
   const formattedVerdictLabels = (skill.verdictLabels && skill.verdictLabels.length > 0)
     ? skill.verdictLabels.map(v => `- \`[${v}]\``).join('\n')
     : `- \`[REJECT]\`\n- \`[ACCEPT WITH CONSTRAINTS]\`\n- \`[MINIMAL PATCH FIRST]\`\n- \`[DEFER]\`\n- \`[GATHER EVIDENCE FIRST]\``;
+
+  const preflightSection = skill.includeReferences.preflightScript ? `
+## Preflight Verification Loop
+
+Before the resulting Skill allows criticism or code changes, it must force this sequence:
+1. Confirm the dependency/runtime state first (e.g. lockfile present, install step completed, generated assets available).
+2. Read the smallest set of entry-point, generator, validation, and deploy files needed to understand the task.
+3. Compare the proposed change against at least two existing repository patterns before inventing new structure.
+4. Mark workflows, deployment files, metadata, migrations, and operational scripts as high-risk surfaces requiring extra evidence.
+5. Only interpret lint/build failures after the environment is ready; missing dependencies are setup gaps, not product defects.
+6. Do not declare the work complete until the request checklist, impacted files, and validation steps all line up.
+
+---
+` : '';
 
   return `# Create a Reusable Blind-Spot Roasting Skill: ${skill.name || 'blind-spot-roaster'}
 
@@ -101,11 +116,19 @@ ${focusAreaDetails || '- Check for resource safety, thread boundaries, transacti
 
 ${skill.customRules ? `### Custom Specific Commandments\n${skill.customRules}\n` : ''}
 
-${skill.id === 'blind-spot-architect-unflinching' ? `
+${isRepoFirstBlindSpot ? `
 ### Interactive Guiding Questions
 The Skill must pay extra attention to these user-configured coordinates:
-- **Primary Laser Focus Area (GQ1):** ${skill.gq1_focusArea || 'Recursive state-persisting loops and asynchronous execution safety.'}
-- **Deepest Undercurrent Fear (GQ2):** ${skill.gq2_specificConcern || 'Cowboy state mutations bypassing static compilation verification.'}
+- **Primary Laser Focus Area (GQ1):** ${skill.gq1_focusArea || 'This repository\'s Vite/TypeScript workflow, generated prompt wording, and GitHub Pages deployment path.'}
+- **Deepest Undercurrent Fear (GQ2):** ${skill.gq2_specificConcern || 'Defaulting to generic advice, misreading setup failures as code defects, or "improving" structure without matching repository-native patterns.'}
+
+### Repository Reality Checks
+The resulting Skill must explicitly challenge these blind spots whenever they apply:
+- **Pattern drift:** prove that a proposed fix matches the current repository style before suggesting a new abstraction.
+- **Intent erosion:** preserve intentional strictness in contracts, metadata, constants, and docs unless real repository evidence says otherwise.
+- **Operational overconfidence:** treat deployment, workflow, metadata, and migration changes as production-risk multipliers.
+- **False failure attribution:** verify setup state (dependencies, generated assets, environment variables) before trusting diagnostics.
+- **Premature closure:** verify the original request, the changed files, and the validation results before declaring success.
 ` : ''}
 
 ---
@@ -119,6 +142,8 @@ Every major claim or critique delivered by the resulting Skill **MUST** be expli
 - \`[UNKNOWN]\`: Requires additional code, runtime logs, or specifications before a conclusion can be made.
 
 ---
+
+${preflightSection}
 
 ## Analysis Workflow to Enforce in the Skill
 

@@ -35,9 +35,12 @@ The Vite dev server starts locally and serves the app with hot reload.
 ## Validation
 
 ```bash
+npm ci
 npm run lint
 npm run build
 ```
+
+If dependencies are not installed yet, treat that as setup work first. Do not interpret missing-module lint/build output as an application regression.
 
 ## Production Build
 
@@ -63,6 +66,16 @@ This repository includes `.github/workflows/deploy-pages.yml` for automatic depl
 - The workflow publishes the generated `/dist` directory with the official GitHub Pages actions
 
 If GitHub Pages is not already configured for this repository, set the Pages source to **GitHub Actions** in the repository settings.
+
+## Repo-First Self-Review Loop
+
+When updating prompts, templates, metadata, or deployment wiring in this repository:
+
+1. Read the relevant entry-point, generator, validation, and workflow files first.
+2. Compare the intended change against existing repository patterns before inventing a new abstraction.
+3. Treat `index.html`, `vite.config.ts`, `.github/workflows/*`, and generated prompt wording as high-risk surfaces because small edits can change deployment or review behavior.
+4. Run `npm ci` before `npm run lint` / `npm run build` when the environment is fresh.
+5. Do not call the task done until the request, changed files, and validation results all match.
 
 ## Project Structure
 
